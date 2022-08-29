@@ -1,19 +1,14 @@
-console.log("adivina que animal es (es un mamifero, muy domestico)");
-
-let palabra = "";
-let vidas = 5;
-console.log("tienes " + vidas + " vidas");
-
-while (palabra != "perro" && vidas > 0) {
-  palabra = prompt("escribe que animal es");
-  if (palabra == "perro") {
-    console.log("felicidades, adivinaste");
-    break;
+function solicitarNombre() {
+  alert("Bienvenido al bodytech");
+  let nombre = prompt("Ingrese su nombre");
+  while (nombre === "") {
+    nombre = prompt("Ingrese su nombre");
   }
-  console.log("sigue intentando, te quedan: " + (vidas - 1) + " vidas");
-  vidas--;
 }
 
-if (vidas < 0) {
-  console.log("Perdiste");
+function mostrarPlanes(){
+  let plan = prompt ("Que plan le interesa ?: \n1)Básico\n2)Intermedio\n3)avanzado");
 }
+
+solicitarNombre();
+mostrarPlanes();
