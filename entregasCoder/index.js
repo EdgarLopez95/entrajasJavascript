@@ -1,72 +1,56 @@
 alert("Bienvenido al gimnacio bodytech");
-function solicitarNombre() {
-  let nombre = prompt("Ingrese su nombre");
-  while (nombre === "") {
-    nombre = prompt("Ingrese su nombre");
-  }
-  return nombre;
+
+const personas = [
+  {
+    nombre: "Edgar",
+    plan: "intermedio",
+    precio: "20 USD",
+  },
+  {
+    nombre: "Felipe",
+    plan: "Basico",
+    precio: "10 USD",
+  },
+  {
+    nombre: "Andres",
+    plan: "Avanzado",
+    precio: "30 USD",
+  },
+  {
+    nombre: "Marco",
+    plan: "intermedio",
+    precio: "20 USD",
+  },
+  {
+    nombre: "Matias",
+    plan: "Basico",
+    precio: "10 USD",
+  },
+];
+
+let informacion;
+do {
+  informacion = parseInt(
+    prompt(
+      "Que información desea observar ?: \n1)Nombres de las personas registradas \n2)planes las personas registradas \n3)precios las personas registradas "
+    )
+  );
+} while (informacion != 1 && informacion != 2 && informacion != 3);
+
+switch (informacion) {
+  case 1:
+    for (persona of personas) {
+      console.log(persona.nombre);
+    }
+    break
+  case 2:
+    for (persona of personas) {
+      console.log(persona.plan);
+    }
+    break
+  case 3:
+    for (persona of personas) {
+      console.log(persona.precio);
+    }
+    break
 }
-
-function mostrarPlanes() {
-  let plan;
-  do {
-    plan = parseInt(
-      prompt("Que plan le interesa ?: \n1)Básico\n2)Intermedio\n3)avanzado")
-    );
-  } while (plan != 1 && plan != 2 && plan != 3);
-
-  switch (plan) {
-    case 1:
-      return "Básico";
-    case 2:
-      return "Intermedio";
-    case 3:
-      return "Avanzado";
-  }
-}
-
-function validarPrecio(plan) {
-  if (plan === "Básico") {
-    return 20;
-  } else if (plan === "Intermedio") {
-    return 40;
-  } else {
-    return 80;
-  }
-}
-
-function validarObjetivo() {
-  let objetivo;
-  do {
-    objetivo = parseInt(
-      prompt(
-        "Cual es su objetivo ?: \n1)Subir Peso\n2)Quemar grasa\n3)Tener resistencia"
-      )
-    );
-  } while (objetivo != 1 && objetivo != 2 && objetivo != 3);
-
-  switch (objetivo) {
-    case 1:
-      return "Subir Peso";
-    case 2:
-      return "Quemar grasa";
-    case 3:
-      return "Tener resistencia";
-  }
-}
-
-let personaNombre = solicitarNombre();
-let planNombre = mostrarPlanes();
-let precioPlan = validarPrecio(planNombre);
-let ObjetivoPersona = validarObjetivo();
-console.log(
-  "Bienvenido al gimnacio Bodytech " +
-    personaNombre +
-    ", selecciono el plan " +
-    planNombre +
-    " y el objetivo de entrenar es " +
-    ObjetivoPersona +
-    " que tiene un costo de " +
-    precioPlan +
-    " Dolares"
-);
