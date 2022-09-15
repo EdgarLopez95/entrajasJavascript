@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  background-color: antiquewhite;
+}
+
+header h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+.primeraSeccion {
+  display: grid;
+  width: 600px;
+  border: 2px solid #c29968;
+  padding: 20px;
+  border-radius: 10px;
+  justify-items: center;
+  margin: 20px auto;
+}
+
+.primeraSeccion h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.primeraSeccion button {
+  width: 50%;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #c29968;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.primeraSeccion button:active {
+    background-color: #9c703a;
+    border-radius: 5;
+}
