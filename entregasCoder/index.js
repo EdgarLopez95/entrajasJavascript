@@ -140,5 +140,7 @@ function getAllTrains() {
 }
 
 function getLastId() {
-  return tranins.length;
+  return;
+  //return tranins.length;
 }
+
