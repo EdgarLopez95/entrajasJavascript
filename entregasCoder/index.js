@@ -14,10 +14,18 @@ const tranins = [
 //   )
 // );
 function agregar() {
-  console.log("oli");
   let agregarEjercicios = document.getElementById("cambiarSection");
-  agregarEjercicios.innerHTML =
-    " <h2>Por favor selecciona el entreno</h2> <button>PECHO</button> <button>BRAZO</button> <button>PIERNA</button> <button>ESPALDA</button>";
+  agregarEjercicios.innerHTML = `
+  <h2>Por favor selecciona el entreno</h2>
+  <button id="agregarPecho">PECHO</button>
+  <button id="agregarPecho">BRAZO</button>
+  <button id="agregarPecho">PIERNA</button>
+  <button id="agregarPecho">ESPALDA</button>
+  <button id="agregarPecho">HOMBRO</button>
+  <button id="agregarPecho">ABDOMINALES</button>
+  <button id="agregarPecho">PECHO</button>
+  `;
+  // " <h2>Por favor selecciona el entreno</h2> <button>PECHO</button> <button>BRAZO</button> <button>PIERNA</button> <button>ESPALDA</button>";
 
   // let bodyPart = prompt(
   //   "Ingrese la parte del cuerpo del entreno que va a crear:\n1. pecho\n2. brazo\n3. pierna\n4. espalda\n5. hombro\n6. abdominales\n7. cardio "
@@ -111,9 +119,48 @@ function agregar() {
   //     break;
   // }
 }
+function ver() {
+  tranins.forEach((train) => {
+    let agregarEjercicios = document.getElementById("cambiarSection");
+    agregarEjercicios.innerHTML = `
+    <h2>Estos son los entrenos asignados</h2>
+    <p">Tu entrenador te ha asignado un ejercicio de:</p>
+    <h3>"${ train.bodyPart}"</h3>
+    <p">El ejercicio que vas a hacer es:</p>
+    <h3>"${train.train}"</h3>
+    <p">su dificultad es:</p>
+    <h3>"${train.difficulty}"</h3>
 
-function ver() {}
-function salir() {}
+    `;
+    // console.log(
+    //   "Tu entrenador te ha asignado un ejercicio de: " +
+    //     train.bodyPart +
+    //     ", El ejercicio que vas a hacer es " +
+    //     train.train +
+    //     ", su dificultad es " +
+    //     train.difficulty +
+    //     ", y este ejercicio se identifica con el ID # " +
+    //     train.id
+    // );
+  });
+}
+function salir() {
+  Toastify({
+    text: "Usted salio de la app",
+    duration: 3000,
+    gravity: "bottom", // `top` or `bottom`
+    position: "center", // `left`, `center` or `right`
+    //stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(to right, #c29968, #c29968)",
+    },
+
+  }).showToast();
+  let agregarEjercicios = document.getElementById("cambiarSection");
+  agregarEjercicios.innerHTML = `
+  <h2>USTED SALIO DE LA APP</h2>
+  `
+}
 
 function createTrain(id, bodyPart, train, difficulty) {
   tranins.push({
@@ -124,23 +171,9 @@ function createTrain(id, bodyPart, train, difficulty) {
   });
 }
 
-function getAllTrains() {
-  tranins.forEach((train) =>
-    console.log(
-      "Tu entrenador te ha asignado un ejercicio de: " +
-        train.bodyPart +
-        ", El ejercicio que vas a hacer es " +
-        train.train +
-        ", su dificultad es " +
-        train.difficulty +
-        ", y este ejercicio se identifica con el ID # " +
-        train.id
-    )
-  );
-}
+function getAllTrains() {}
 
 function getLastId() {
   return;
   //return tranins.length;
 }
-
