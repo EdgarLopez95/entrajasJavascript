@@ -75,6 +75,13 @@ function ver() {
     `;
     mostrarEjercicios.appendChild(sectionEntrenos);
   });
+  //acá guardo en el local storage
+  const guardarLocal = (clave, valor) => {
+    localStorage.setItem(clave, valor);
+  };
+  for (const train of tranins) {
+    guardarLocal("entreno", JSON.stringify(train));
+  }
   //console.log(tranins);
 }
 function salir() {
