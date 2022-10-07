@@ -1,148 +1,81 @@
 let option;
 const tranins = [
   {
-    id: 1,
     train: "mancuernas de pie",
     bodyPart: "BRAZO",
     difficulty: "MEDIO",
   },
 ];
 
-// option = Number(
-//   prompt(
-//     "CONSOLA DE ENTRENADOR, ingrese una opción:\n1. Agrega un ejercicio al cliente\n2. ver los ejercicios del cliente\n0. Salir"
-//   )
-// );
 function agregar() {
-  let agregarEjercicios = document.getElementById("cambiarSection");
+  const agregarEjercicios = document.getElementById("cambiarSection");
   agregarEjercicios.innerHTML = `
   <h2>Por favor selecciona el entreno</h2>
   <button id="agregarPecho">PECHO</button>
-  <button id="agregarPecho">BRAZO</button>
-  <button id="agregarPecho">PIERNA</button>
-  <button id="agregarPecho">ESPALDA</button>
-  <button id="agregarPecho">HOMBRO</button>
-  <button id="agregarPecho">ABDOMINALES</button>
-  <button id="agregarPecho">PECHO</button>
+  <button id="agregarBrazo">BRAZO</button>
+  <button id="agregarPierna">PIERNA</button>
+  <button id="agregarEspalda">ESPALDA</button>
+  <button id="agregarHombro">HOMBRO</button>
+  <button id="agregarAbdominales">ABDOMINALES</button>
+  <button id="agregarCardio">CARDIO</button>
   `;
-  // " <h2>Por favor selecciona el entreno</h2> <button>PECHO</button> <button>BRAZO</button> <button>PIERNA</button> <button>ESPALDA</button>";
+  (" <h2>Por favor selecciona el entreno</h2> <button>PECHO</button> <button>BRAZO</button> <button>PIERNA</button> <button>ESPALDA</button>");
 
-  // let bodyPart = prompt(
-  //   "Ingrese la parte del cuerpo del entreno que va a crear:\n1. pecho\n2. brazo\n3. pierna\n4. espalda\n5. hombro\n6. abdominales\n7. cardio "
-  // );
-
-  // switch (bodyPart) {
-  //   case "1":
-  //     bodyPart = "PECHO";
-  //     break;
-  //   case "2":
-  //     bodyPart = "BRAZO";
-  //     break;
-  //   case "3":
-  //     bodyPart = "PIERNA";
-  //     break;
-  //   case "4":
-  //     bodyPart = "ESPALDA";
-  //     break;
-  //   case "5":
-  //     bodyPart = "HOMBRO";
-  //     break;
-  //   case "6":
-  //     bodyPart = "ABDOMINALES";
-  //     break;
-  //   case "7":
-  //     bodyPart = "CARDIO";
-  //     break;
-
-  //   default:
-  // }
-
-  // switch (option) {
-  //   case 1:
-  //     let bodyPart = prompt(
-  //       "Ingrese la parte del cuerpo del entreno que va a crear:\n1. pecho\n2. brazo\n3. pierna\n4. espalda\n5. hombro\n6. abdominales\n7. cardio "
-  //     );
-
-  //     switch (bodyPart) {
-  //       case "1":
-  //         bodyPart = "PECHO";
-  //         break;
-  //       case "2":
-  //         bodyPart = "BRAZO";
-  //         break;
-  //       case "3":
-  //         bodyPart = "PIERNA";
-  //         break;
-  //       case "4":
-  //         bodyPart = "ESPALDA";
-  //         break;
-  //       case "5":
-  //         bodyPart = "HOMBRO";
-  //         break;
-  //       case "6":
-  //         bodyPart = "ABDOMINALES";
-  //         break;
-  //       case "7":
-  //         bodyPart = "CARDIO";
-  //         break;
-
-  //       default:
-  //         break;
-  //     }
-  //     const train = prompt("Ingrese el ejercicio:");
-
-  //     let difficulty = prompt(
-  //       "Ingrese la dificultad del ejercicio:\n1. suave\n2. medio\n3. dura"
-  //     );
-  //     switch (difficulty) {
-  //       case "1":
-  //         difficulty = "SUAVE";
-  //         break;
-  //       case "2":
-  //         difficulty = "MEDIO";
-  //         break;
-  //       case "3":
-  //         difficulty = "DURO";
-  //         break;
-  //     }
-  //     const id = getLastId() + 1;
-  //     createTrain(id, bodyPart, train, difficulty);
-  //     break;
-  //   case 2:
-  //     getAllTrains();
-  //     break;
-  //   case 0:
-  //     alert("Gracias, regrese pronto");
-  //     break;
-  //   default:
-  //     alert("Intente nuevamente");
-  //     break;
-  // }
-}
-function ver() {
-  tranins.forEach((train) => {
-    let agregarEjercicios = document.getElementById("cambiarSection");
+  const PECHO = document.getElementById("agregarPecho");
+  PECHO.addEventListener("click", () => {
+    const agregarEjercicios = document.getElementById("cambiarSection");
     agregarEjercicios.innerHTML = `
+  <h2>Por favor escribe el ejercicio y la dificultad</h2>
+  <form action="">
+  <label for="inputTrain">
+    Escribe el ejercicio
+  </label>
+  <input
+    type="text"
+    id="inputTrain"
+    placeholder="press plano"
+  />
+  <br>
+    <label for="inputdif">
+    Pon la difucultad
+  </label>
+  <input
+    type="text"
+    id="inputdif"
+    placeholder="press plano"
+  />
+  <button type="button" id="botonDatos">Agregar</button>
+  `;
+    let botonDatos = document.getElementById("botonDatos");
+    botonDatos.onclick = () => {
+      const inputTrain = document.getElementById("inputTrain");
+      const inputHard = document.getElementById("inputdif");
+      const valTrain = inputTrain.value;
+      const valtHard = inputHard.value;
+
+      createTrain("PECHO", valTrain, valtHard);
+      ver();
+    };
+  });
+}
+
+function ver() {
+  const mostrarEjercicios = document.getElementById("cambiarSection");
+  mostrarEjercicios.innerHTML = ";"
+  tranins.forEach((train) => {
+    const sectionEntrenos = document.createElement("section");
+    sectionEntrenos.innerHTML = `
     <h2>Estos son los entrenos asignados</h2>
     <p">Tu entrenador te ha asignado un ejercicio de:</p>
-    <h3>"${ train.bodyPart}"</h3>
+    <h3>"${train.bodyPart}"</h3>
     <p">El ejercicio que vas a hacer es:</p>
     <h3>"${train.train}"</h3>
     <p">su dificultad es:</p>
     <h3>"${train.difficulty}"</h3>
-
     `;
-    // console.log(
-    //   "Tu entrenador te ha asignado un ejercicio de: " +
-    //     train.bodyPart +
-    //     ", El ejercicio que vas a hacer es " +
-    //     train.train +
-    //     ", su dificultad es " +
-    //     train.difficulty +
-    //     ", y este ejercicio se identifica con el ID # " +
-    //     train.id
-    // );
+    mostrarEjercicios.appendChild(sectionEntrenos);
   });
+  //console.log(tranins);
 }
 function salir() {
   Toastify({
@@ -154,17 +87,15 @@ function salir() {
     style: {
       background: "linear-gradient(to right, #c29968, #c29968)",
     },
-
   }).showToast();
   let agregarEjercicios = document.getElementById("cambiarSection");
   agregarEjercicios.innerHTML = `
   <h2>USTED SALIO DE LA APP</h2>
-  `
+  `;
 }
 
-function createTrain(id, bodyPart, train, difficulty) {
+function createTrain(bodyPart, train, difficulty) {
   tranins.push({
-    id,
     bodyPart,
     train,
     difficulty,
@@ -177,3 +108,5 @@ function getLastId() {
   return;
   //return tranins.length;
 }
+
+console.log(tranins);
