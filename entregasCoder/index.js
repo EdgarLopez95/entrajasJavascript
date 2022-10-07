@@ -61,11 +61,11 @@ function agregar() {
 
 function ver() {
   const mostrarEjercicios = document.getElementById("cambiarSection");
-  mostrarEjercicios.innerHTML = ";"
+  mostrarEjercicios.innerHTML = ""
   tranins.forEach((train) => {
     const sectionEntrenos = document.createElement("section");
     sectionEntrenos.innerHTML = `
-    <h2>Estos son los entrenos asignados</h2>
+    <h2>Este es un entreno</h2>
     <p">Tu entrenador te ha asignado un ejercicio de:</p>
     <h3>"${train.bodyPart}"</h3>
     <p">El ejercicio que vas a hacer es:</p>
