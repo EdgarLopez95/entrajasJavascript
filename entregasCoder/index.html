@@ -4,31 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <h1>Bienvenido al sistema que asigna entrenamientos</h1>
-    </header>
+    <h1>Ver entrenos</h1>
+    <div class="contenedor">
+      <div id="contenedor-de-ejercicios" class="acomodar"></div>
+    </div>
 
-    <section class="primeraSeccion">
-      <h2>Por favor selecciona tu proxima acción</h2>
-      <button type="button" onclick="agregar()">AGREGAR ENTRENO</button>
-      <button type="button" onclick="ver()">VER ENTRENOS</button>
-      <button type="button" onclick="salir()">SALIR</button>
-    </section>
-
-    <section class="primeraSeccion" id="cambiarSection">
-      <!-- <h2>no hay datos</h2> -->
-    </section>
-
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/toastify-js"
-    ></script>
-    <script src="./index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

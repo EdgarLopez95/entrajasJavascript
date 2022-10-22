@@ -1,0 +1,23 @@
+[
+  {
+    "titulo": "Press de banca",
+    "imagen": "./img/1.png",
+    "parteDelCuerpo": "PECHO",
+    "difucultad": "MEDIO",
+    "link": "https://www.youtube.com/watch?v=GeLq8cMODLc&ab_channel=TecnicasGymtopz"
+  },
+  {
+    "titulo": "Remo al cuello",
+    "imagen": "./img/2.png",
+    "parteDelCuerpo": "HOMBRO",
+    "difucultad": "DIFICIL",
+    "link": "https://www.youtube.com/watch?v=GeLq8cMODLc&ab_channel=TecnicasGymtopz"
+  },
+  {
+    "titulo": "Peso muerto",
+    "imagen": "./img/3.png",
+    "parteDelCuerpo": "Piernas",
+    "difucultad": "MEDIO",
+    "link": "https://www.youtube.com/watch?v=GeLq8cMODLc&ab_channel=TecnicasGymtopz"
+  }
+]

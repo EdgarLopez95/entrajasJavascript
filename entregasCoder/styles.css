@@ -6,47 +6,64 @@
 
 html {
   font-family: "Montserrat", sans-serif;
-  background-color: antiquewhite;
+  background-color: #0a0030;
 }
-
-header h1 {
+h1{
+  margin: 50px;
+  color: #00aaff;
   text-align: center;
-  margin: 20px;
 }
-
-.primeraSeccion {
-  display: grid;
-  width: 600px;
-  border: 2px solid #c29968;
-  padding: 20px;
-  border-radius: 10px;
-  justify-items: center;
-  margin: 20px auto;
-}
-
-.primeraSeccion h2 {
+h3{
+  color: #00aaff;
+  margin-top: 10px;
   text-align: center;
-  margin-bottom: 20px;
 }
-.primeraSeccion button {
-  width: 50%;
-  margin-bottom: 10px;
-  padding: 5px;
-  background-color: #c29968;
-  border-radius: 10px;
-  outline: none;
-  border: none;
+p{
   color: white;
-  font-weight: bolder;
-  cursor: pointer;
-}
-.primeraSeccion button:active {
-    background-color: #9c703a;
-    border-radius: 5;
-}
-input {
-  margin: 10px 0;
-  border-radius: 15px;
-  padding: 5px;
   text-align: center;
+  margin: 10px 0 10px 0;
+}
+a {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
+.acomodar {
+  display: flex;
+  gap: 50px;
+}
+.contenedor {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  display: flex;
+  margin: 20px auto;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  color: #ffffff;
+  background-color: #00aaff;
+  box-shadow: 0 0 10px #00aaff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: all 0.15s linear;
+}
+button:hover {
+  background-color: #010e3d;
+  border-color: #00aaff;
+  color: #00aaff;
+  transform: translateY(-5px) scale(1);
+}
+
+button:active {
+  background-color: transparent;
+  border-color: #00aaff;
+  color: #00aaff;
+  transform: translateY(5px) scale(0.95);
+}
+img{
+  max-width: 300px;
+  border-radius: 10px;
 }
